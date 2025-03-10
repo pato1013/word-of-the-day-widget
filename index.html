@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word of the Day</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            background: #1e1e1e;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        .word {
+            font-size: 2em;
+            color: #f1c40f;
+        }
+        .definition {
+            margin: 20px 0;
+            font-size: 1.2em;
+        }
+        .example {
+            font-style: italic;
+            margin-top: 10px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Word of the Day</h1>
+        <div class="word" id="word">Procrastination</div>
+        <div class="definition" id="definition">Le fait de remettre à plus tard ce qui devrait être fait maintenant.</div>
+        <div class="example" id="example">Exemple : "La procrastination l'empêche de terminer ses projets à temps."</div>
+        <button onclick="generateNewWord()">Next Word</button>
+    </div>
+
+    <script>
+        const words = [
+            {
+                word: 'Procrastination',
+                definition: 'Le fait de remettre à plus tard ce qui devrait être fait maintenant.',
+                example: 'Exemple : "La procrastination l\'empêche de terminer ses projets à temps."'
+            },
+            {
+                word: 'Éphémère',
+                definition: 'Qui dure peu de temps, qui est passager.',
+                example: 'Exemple : "La beauté d\'un coucher de soleil est éphémère."'
+            },
+            {
+                word: 'Serendipité',
+                definition: 'Le fait de trouver quelque chose de bien sans le chercher.',
+                example: 'Exemple : "Il a trouvé ce livre par sérendipité en flânant dans la bibliothèque."'
+            },
+            {
+                word: 'Lugubre',
+                definition: 'Qui est triste, sombre et inquiétant.',
+                example: 'Exemple : "L\'ambiance lugubre de la pièce rendait tout le monde mal à l\'aise."'
+            },
+            {
+                word: 'Irrévocable',
+                definition: 'Qui ne peut être annulé ou modifié.',
+                example: 'Exemple : "Sa décision de partir était irrévocable."'
+            }
+        ];
+
+        let currentWordIndex = 0;
+
+        function generateNewWord() {
+            currentWordIndex = (currentWordIndex + 1) % words.length;
+            const currentWord = words[currentWordIndex];
+            document.getElementById('word').textContent = currentWord.word;
+            document.getElementById('definition').textContent = currentWord.definition;
+            document.getElementById('example').textContent = currentWord.example;
+        }
+    </script>
+</body>
+</html>
