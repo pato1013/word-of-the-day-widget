@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover a new word every day with its definition and example.">
     <title>Word of the Day</title>
     <style>
         body {
@@ -11,6 +12,7 @@
             background-color: #121212;
             color: white;
             padding: 20px;
+            margin: 0;
         }
         .container {
             background: #1e1e1e;
@@ -20,6 +22,10 @@
             box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
             width: 90%;
             max-width: 800px;
+            transition: box-shadow 0.3s ease;
+        }
+        .container:hover {
+            box-shadow: 0 8px 16px rgba(255, 255, 255, 0.3);
         }
         h2 {
             margin-bottom: 10px;
@@ -46,14 +52,20 @@
             border-radius: 5px;
             text-decoration: none;
             margin-top: 20px;
+            transition: background 0.3s ease;
         }
         .btn:hover {
             background: #0056b3;
         }
+        footer {
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #aaaaaa;
+        }
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="container" role="main">
         <h2>Word of the Day</h2>
         <div class="word">Serendipity</div>
         <div class="definition">
@@ -62,8 +74,11 @@
         <div class="example">
             Example: "It was pure serendipity that they met each other at the concert."
         </div>
-        <a href="#" class="btn" onclick="nextWord()">Next Word</a>
+        <a href="#" class="btn" role="button" onclick="nextWord()">Next Word</a>
     </div>
+    <footer>
+        <p>&copy; 2023 Word of the Day. All rights reserved.</p>
+    </footer>
 
     <script>
         const words = [
